@@ -52,5 +52,5 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'paperclip'     '~> 5.1.0'
-gem 'slim-rails'    '~> 3.1.2'
+gem 'paperclip',     '~> 5.1.0'
+gem 'slim-rails',    '~> 3.1.2'

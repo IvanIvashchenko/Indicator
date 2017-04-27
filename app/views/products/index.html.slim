@@ -2,11 +2,11 @@ h1 Listing products
 table
   tr
     th Title
-    th Text
+    th Description
     th Image
   - @products.each do |product|
     tr
       td= product.title
-      td= product.text
-      td= product.image
+      td= product.description
+      / td= product.image
       td= link_to 'Show', product_path(product)
