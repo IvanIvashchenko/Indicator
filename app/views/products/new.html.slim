@@ -9,4 +9,8 @@ h1 New Product
     br/
     = f.text_area :description
   p
+    = f.label :image
+    br/
+    = f.file_field :image
+  p
     = f.submit

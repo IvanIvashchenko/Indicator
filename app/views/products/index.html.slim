@@ -8,5 +8,6 @@ table
     tr
       td= product.title
       td= product.description
-      / td= product.image
+      td
+        img src = product.image
       td= link_to 'Show', product_path(product)

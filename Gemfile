@@ -54,3 +54,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'paperclip',     '~> 5.1.0'
 gem 'slim-rails',    '~> 3.1.2'
+gem 'rmagick',       '~> 2.15.4'
+gem 'carrierwave',   '~> 1.0'

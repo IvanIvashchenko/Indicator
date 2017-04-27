@@ -25,3 +25,4 @@ tmp/*
 .ruby-gemset
 *.iml
 bin/*
+public/uploads/*
