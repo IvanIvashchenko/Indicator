@@ -7,8 +7,9 @@ html
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
-    - if user_signed_in?
-      li
-        = link_to('Logout', destroy_user_session_path, :method => :delete)
-    = yield
+    .container
+      - if user_signed_in?
+        btn.pull-right.btn
+          = link_to('Logout', destroy_user_session_path, :method => :delete)
+      = yield
  
