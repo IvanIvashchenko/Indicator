@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
 
-  get 'login/index'
+  root 'products#index'
 
   resources :products
 
-  root 'login#index'
 
   devise_for :users, :controllers => {:registrations => 'registrations'}
   devise_scope :user do
@@ -12,7 +11,7 @@ Rails.application.routes.draw do
       only: [:new, :update, :edit],
       path: 'users',
       path_names: { new: 'sign_up', login: 'sign_in', logout: 'sign_out'},
-      controller: 'registrations',
+      # controller: 'registrations',
       as: :user_registration do
         get :cancel
       end
