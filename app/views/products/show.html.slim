@@ -6,4 +6,6 @@ p
   = @product.description
 p
   strong Image:
-  img src = @product.image
+  img.img-rounded src = @product.image
+p
+  = link_to 'Products list', products_path

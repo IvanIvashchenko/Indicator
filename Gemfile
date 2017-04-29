@@ -56,3 +56,7 @@ gem 'paperclip',     '~> 5.1.0'
 gem 'slim-rails',    '~> 3.1.2'
 gem 'rmagick',       '~> 2.15.4'
 gem 'carrierwave',   '~> 1.0'
+gem 'devise',        '~> 4.2.1'
+
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap_form', '~> 2.7.0'

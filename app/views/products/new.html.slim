@@ -1,16 +1,7 @@
-h1 New Product
-= form_for :product, url: products_path do |f|
-  p
-    = f.label :title
-    br/
+h2 New Product
+.products-form
+  = bootstrap_form_for :product, url: products_path do |f|
     = f.text_field :title
-  p
-    = f.label :description
-    br/
     = f.text_area :description
-  p
-    = f.label :image
-    br/
     = f.file_field :image
-  p
     = f.submit
