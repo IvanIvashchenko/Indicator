@@ -1,0 +1,7 @@
+h2 New Product
+.products-form
+  = bootstrap_form_for :product, url: products_path do |f|
+    = f.text_field :title
+    = f.text_area :description
+    = f.file_field :image
+    = f.submit

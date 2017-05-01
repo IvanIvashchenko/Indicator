@@ -24,4 +24,4 @@ tmp/*
 /.idea
 .ruby-gemset
 *.iml
-bin/*
+public/uploads/*

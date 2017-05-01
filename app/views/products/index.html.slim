@@ -1,0 +1,14 @@
+h1 Listing products
+table.table
+  tr
+    th Title
+    th Description
+    th Image
+  - @products.each do |product|
+    tr
+      td= product.title
+      td= product.description
+      td
+        img.img-rounded src = product.image
+      td= link_to 'Show', product_path(product)
+= link_to 'Create', new_product_path
