@@ -4,8 +4,19 @@ class ApplicationController < ActionController::Base
   protected
   def authenticate_user!
     if session[:user_id]
-       # set current user object to @current_user object variable
-      @current_user = User.find session[:user_id] 
+      # TODO:: rewrite
+      # set current user object to @current_user object variable
+      case session[:role]
+        when 'admin' 
+          @current_user = Admin.find session[:user_id] 
+
+        when 'owner' 
+          @current_user = Owner.find session[:user_id] 
+
+        when 'guest' 
+          @current_user = Guest.find session[:user_id] 
+      end
+
       return true 
     else
       redirect_to(:controller => 'sessions', :action => 'new')
