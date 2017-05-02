@@ -13,4 +13,5 @@ table.table
       td= link_to 'Show', product_path(product)
       - if @role == 'admin' and !product.is_pro
         td= link_to 'Mark as pro', mark_product_path(product.id), :method => :put
-= link_to 'Create', new_product_path
+- if @role == 'owner'        
+  = link_to 'Create', new_product_path

@@ -2,12 +2,14 @@ class ProductsController < ApplicationController
 
   before_filter :authenticate_user!
   before_filter :is_admin_user?, only: :mark_as_pro
+  before_filter :is_owner_user?, only: [:create, :new]
 
   def new
   end
 
   def show
     @product = Product.find(params[:id])
+    @role = session[:role]
   end
 
   def create
@@ -19,8 +21,12 @@ class ProductsController < ApplicationController
   end
 
   def index
-    @products = Product.all
     @role = session[:role]
+    if @role == 'guest'
+      @products = Product.where('is_pro = ?', true)
+    else
+      @products = Product.all
+    end
   end
 
   def mark_as_pro
@@ -37,8 +43,13 @@ class ProductsController < ApplicationController
 
   def is_admin_user?
     if session[:role] != 'admin'
-      puts 'ololo'
       redirect_to products_path, alert: 'Not authorized for edit product'
+    end
+  end
+
+  def is_owner_user?
+    if session[:role] != 'owner'
+      redirect_to products_path, alert: 'Not authorized for create product'
     end
   end
 
