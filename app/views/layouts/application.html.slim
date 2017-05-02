@@ -10,6 +10,6 @@ html
     .container
       - if user_signed_in?
         btn.pull-right.btn
-          = link_to('Logout', destroy_user_session_path, :method => :delete)
+          = link_to('Logout', '/logout', :method => :get)
       = yield
  

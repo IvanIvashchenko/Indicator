@@ -30,7 +30,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -56,7 +56,9 @@ gem 'paperclip',     '~> 5.1.0'
 gem 'slim-rails',    '~> 3.1.2'
 gem 'rmagick',       '~> 2.15.4'
 gem 'carrierwave',   '~> 1.0'
-gem 'devise',        '~> 4.2.1'
+# gem 'devise',        '~> 4.2.1'
+gem 'cancan',        '~> 1.6.10'
+gem 'responders',     '~> 2.4.0'
 
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'bootstrap_form', '~> 2.7.0'
