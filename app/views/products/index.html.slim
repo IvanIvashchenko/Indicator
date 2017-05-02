@@ -11,4 +11,7 @@ table.table
       td
         img.img-rounded src = product.image
       td= link_to 'Show', product_path(product)
-= link_to 'Create', new_product_path
+      - if @role == 'admin' and !product.is_pro
+        td= link_to 'Mark as pro', mark_product_path(product.id), :method => :put
+- if @role == 'owner'        
+  = link_to 'Create', new_product_path

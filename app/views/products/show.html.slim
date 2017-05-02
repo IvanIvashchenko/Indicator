@@ -4,6 +4,10 @@ p
 p
   strong Description:
   = @product.description
+- if @role != 'guest'
+  p
+    strong Shop:
+    = @product.shop
 p
   strong Image:
   img.img-rounded src = @product.image
