@@ -52,13 +52,16 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'paperclip',     '~> 5.1.0'
+# gem 'paperclip',     '~> 5.1.0'
 gem 'slim-rails',    '~> 3.1.2'
 gem 'rmagick',       '~> 2.15.4'
 gem 'carrierwave',   '~> 1.0'
 # gem 'devise',        '~> 4.2.1'
 # gem 'cancan',        '~> 1.6.10'
 gem 'responders',     '~> 2.4.0'
+gem 'http',           '~> 2.2.2'
 
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'bootstrap_form', '~> 2.7.0'
+
+gem 'rubocop', '~> 0.48.1', require: false

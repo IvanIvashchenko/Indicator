@@ -29,11 +29,35 @@ class ProductsController < ApplicationController
     end
   end
 
+  # TODO:: move to separate controller
   def mark_as_pro
     @product = Product.find_by(id: params[:id])
     @product.is_pro = true
     @product.save
     redirect_to products_path
+  end
+
+  # TODO:: move to separate controller
+  def buy_product
+    image_id = rand(1..5000)
+    response = HTTP.get("http://jsonplaceholder.typicode.com/photos/#{image_id}").to_s
+    response_object = JSON.parse(response)
+    urlValue = response_object['url'].split('/')[-1]
+    thumbnailUrlValue = response_object['thumbnailUrl'].split('/')[-1]
+    if thumbnailUrlValue > urlValue
+      # TODO:: send mail to admins with user emails
+      # TODO:: show error message to user
+    else
+      id_response = JSON.parse(HTTP.post("http://jsonplaceholder.typicode.com/todos").to_s)
+      id = id_response['id']
+      puts id
+      # TODO:: send id to admins
+      # TODO:: send thumbnail to user
+
+
+    end
+    puts response
+    render json: response
   end
 
   def update

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :products
 
   put 'products/:id/pro' => 'products#mark_as_pro', :as => 'mark_product'
+  get 'products/:id/buy' => 'products#buy_product', :as => 'buy_product'
 
 
   get '/login' => 'sessions#new'
