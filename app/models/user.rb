@@ -3,11 +3,7 @@ class User < ApplicationRecord
   # roles constant array
   ROLES = %w[admin owner guest].freeze
 
-  # devise :database_authenticatable, :registerable #,:recoverable, :rememberable, :trackable, :validatable, :async
-
-  # has_many :products
-  # validates :password, :name, :role, presence: true
-  validates :email, :presence => true, :uniqueness => true
+  validates :email, presence: true, uniqueness: true
 
   def role=(role_name)
     @role = role_name

@@ -1,13 +1,11 @@
 class SessionsController < ApplicationController
-
   def new
-    if user_signed_in?
-      redirect_to after_sign_up_path_for
-    end
+    return if user_signed_in?
+    redirect_to after_sign_up_path_for
   end
 
   def create
-    # TODO:: rewrite this!!!
+    # TODO: rewrite this!!!
     user = Guest.find_by(email: params[:user][:email])
     role = 'guest'
     unless user
@@ -32,5 +30,4 @@ class SessionsController < ApplicationController
     session[:user_id] = nil
     redirect_to '/login'
   end
-
 end
