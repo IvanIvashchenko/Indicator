@@ -14,6 +14,7 @@ class OwnersController < ApplicationController
     )
     if @owner.save
       session[:user_id] = @owner.id
+      session[:role] = 'owner'
       respond_with @owner, location: after_sign_up_path_for
     else
       respond_with @owner, location: sign_up_owner_path

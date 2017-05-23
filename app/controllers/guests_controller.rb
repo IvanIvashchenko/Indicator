@@ -12,6 +12,7 @@ class GuestsController < ApplicationController
     )
     if @guest.save
       session[:user_id] = @guest.id
+      session[:role] = 'guest'
       respond_with @guest, location: after_sign_up_path_for
     else
       respond_with @guest, location: sign_up_guest_path

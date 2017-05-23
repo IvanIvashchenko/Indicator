@@ -1,3 +1,5 @@
+- if flash[:buy_error]
+  .buy_error=flash[:buy_error]
 p
   strong Title:
   = @product.title
@@ -13,5 +15,6 @@ p
   img.img-rounded src = @product.image
 p
   = link_to 'Products list', products_path
-p
-  .btn.btn-default.btn-buy-product(data-product-id=@product.id) Buy product
+- if @show_buy_button
+  p
+    .btn.btn-default.btn-buy-product(data-product-id=@product.id) Buy product

@@ -9,6 +9,7 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @role = session[:role]
+    @show_buy_button = @role == 'guest' && !@product.is_pro && @product.shop
   end
 
   def create
@@ -22,11 +23,7 @@ class ProductsController < ApplicationController
 
   def index
     @role = session[:role]
-    @products = if @role == 'guest'
-      Product.where('is_pro = ?', true)
-    else
-      Product.all
-    end
+    @products = Product.all
   end
 
   # TODO: move to separate controller
@@ -39,6 +36,14 @@ class ProductsController < ApplicationController
 
   # TODO: move to separate controller
   def buy_product
+    email = @current_user.email
+    domain_zone = email.split('.').last
+    if domain_zone == 'com'
+      response = { error: 'You could not buy products cause your domain zone is ".com"' }
+      render json: response
+      return
+    end
+
     image_id = rand(1..5000)
     response = HTTP.get(
       "http://jsonplaceholder.typicode.com/photos/#{image_id}"

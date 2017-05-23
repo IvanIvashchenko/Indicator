@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   def new
-    return if user_signed_in?
+    return unless user_signed_in?
     redirect_to after_sign_up_path_for
   end
 

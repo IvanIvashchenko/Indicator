@@ -14,7 +14,8 @@ class AdminsController < ApplicationController
       )
     )
     if @admin.save
-      session[:user_id] = @admin.id
+      session[:user_id] = @admin.
+      session[:role] = 'admin'
       respond_with @admin, location: after_sign_up_path_for
     else
       respond_with @admin, location: sign_up_admin_path
