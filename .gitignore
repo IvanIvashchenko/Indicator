@@ -27,3 +27,4 @@ config/secrets.yml
 *.iml
 public/uploads/*
 config/env_vars.rb
+config/database.yml

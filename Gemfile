@@ -62,3 +62,5 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'bootstrap_form', '~> 2.7.0'
 
 gem 'rubocop', '~> 0.48.1', require: false
+
+gem 'pg', '~> 0.20.0'
