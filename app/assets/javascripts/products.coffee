@@ -7,4 +7,7 @@ $(document).ready ->
             error: (jqXHR, textStatus, errorThrown) ->
                 $('body').append "AJAX Error: #{textStatus}"
             success: (data, textStatus, jqXHR) ->
-                $('body').append "Successful AJAX call: #{data}"
+                if data.error
+                  alert data.error
+                else
+                  alert "Successful purchase"

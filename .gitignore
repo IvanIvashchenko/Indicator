@@ -26,3 +26,4 @@ config/secrets.yml
 .ruby-gemset
 *.iml
 public/uploads/*
+config/env_vars.rb
