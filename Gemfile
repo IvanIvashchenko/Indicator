@@ -64,3 +64,5 @@ gem 'bootstrap_form', '~> 2.7.0'
 gem 'rubocop', '~> 0.48.1', require: false
 
 gem 'pg', '~> 0.20.0'
+gem 'redis-namespace', '~> 1.5'
+gem 'sidekiq', '~> 5.0.0'

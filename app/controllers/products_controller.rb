@@ -49,7 +49,6 @@ class ProductsController < ApplicationController
       HTTP.post('http://jsonplaceholder.typicode.com/todos').to_s
     )
     id = id_response['id']
-    # TODO: use sidekiq
     GuestMailer.purchase_email(@current_user, response_object['thumbnailUrl']).deliver_later
     AdminMailer.success_purchase_email(id).deliver_later
     render json: response
