@@ -1,9 +1,14 @@
-h2 Sign up
+h2 Sign up as owner
 .general-form
-  = bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-    = devise_error_messages!
+  = bootstrap_form_for(:owner, url: sign_up_owner_path) do |f|
+    - if @owner.errors.any?
+    .error_messages
+      ul
+        - @owner.errors.full_messages.each do |message|
+          li= message
     = f.email_field :email, autofocus: true
-    = f.text_field :name
+    = f.text_field :shop
+    = f.file_field :avatar
     - if @minimum_password_length
       em
         | (#{@minimum_password_length} characters minimum)
@@ -11,4 +16,4 @@ h2 Sign up
     = f.password_field :password_confirmation, autocomplete: "off"
     .actions
       = f.submit "Sign up"
-  = render "devise/shared/links"
+  = link_to('Sign in', '/login')

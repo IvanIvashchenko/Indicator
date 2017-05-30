@@ -1,0 +1,11 @@
+h2 Log in
+.general-form
+  = bootstrap_form_for(:user, url: login_path) do |f|
+    = f.email_field :email, autofocus: true
+    = f.password_field :password, autocomplete: "off"
+    .actions
+      = f.submit "Log in"
+ul.list-unstyled
+  li = link_to('Sign up as an admin', '/sign_up/admin')
+  li = link_to('Sign up as an owner', '/sign_up/owner')
+  li = link_to('Sign up as a guest', '/sign_up/guest')

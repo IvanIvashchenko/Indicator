@@ -1,6 +1,6 @@
 $(document).ready ->
-    $('.btn-buy-product').click ->
-        url = '/products/' + $(@).data('product-id') + '/buy'
+    $('.btn-buy-bundle').click ->
+        url = '/products/' + $(@).data('bundle-id') + '/buy'
         $.ajax url,
             type: 'GET'
             dataType: 'json'

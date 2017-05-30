@@ -1,0 +1,22 @@
+h2 Sign up as admin
+.general-form
+  = bootstrap_form_for(:admin, url: sign_up_admin_path) do |f|
+    - if @admin.errors.any?
+    .error_messages
+      ul
+        - @admin.errors.full_messages.each do |message|
+          li= message
+    = f.email_field :email, autofocus: true
+    = f.text_field :firstname
+    = f.text_field :lastname
+    = f.date_field :birth_date
+    = f.file_field :avatar
+    = f.file_field :photo
+    - if @minimum_password_length
+      em
+        | (#{@minimum_password_length} characters minimum)
+    = f.password_field :password, autocomplete: "off"
+    = f.password_field :password_confirmation, autocomplete: "off"
+    .actions
+      = f.submit "Sign up"
+  = link_to('Sign in', '/login')
