@@ -13,5 +13,11 @@ table.table
       td= link_to 'Show', product_path(product)
       - if @role == 'admin' and !product.is_pro
         td= link_to 'Mark as pro', mark_product_path(product.id), :method => :put
-- if @role == 'owner'        
+  - @bundles.each do |bundle|
+    tr
+      td= bundle.name
+      td
+      td
+      td= link_to 'Show', bundle_path(bundle)
+- if @role == 'owner'
   = link_to 'Create', new_product_path

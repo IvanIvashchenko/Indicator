@@ -19,5 +19,7 @@ Rails.application.routes.draw do
   get 'sign_up/guest' =>'guests#new'
   post 'sign_up/guest' =>'guests#create'
 
+  get 'bundles/:id' => 'bundles#show', :as => 'bundle'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

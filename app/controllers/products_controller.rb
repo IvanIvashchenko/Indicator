@@ -23,7 +23,8 @@ class ProductsController < ApplicationController
 
   def index
     @role = session[:role]
-    @products = Product.all
+    @products = Product.where("NOT EXISTS(SELECT 1 from bundles_products where products.id = bundles_products.product_id)")
+    @bundles = Bundle.all
   end
 
   # TODO: move to separate controller
