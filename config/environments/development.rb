@@ -27,7 +27,8 @@ Rails.application.configure do
   end
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_deliveries = true
 
   config.action_mailer.perform_caching = false
 
@@ -54,4 +55,8 @@ Rails.application.configure do
 
   # Default devise mailer settings
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  config.active_job.queue_adapter = :sidekiq
+  config.active_job.queue_name_prefix = "indicator"
+  config.active_job.queue_name_delimiter = "_"
 end

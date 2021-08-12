@@ -4,8 +4,15 @@ p
 p
   strong Description:
   = @product.description
+- if @role != 'guest'
+  p
+    strong Shop:
+    = @product.shop
 p
   strong Image:
   img.img-rounded src = @product.image
 p
   = link_to 'Products list', products_path
+- if @show_buy_button
+  p
+    .btn.btn-default.btn-buy-product(data-product-id=@product.id) Buy product

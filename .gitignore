@@ -20,8 +20,13 @@ tmp/*
 # Ignore Byebug command history file.
 .byebug_history
 
+config/secrets.yml
 
 /.idea
 .ruby-gemset
 *.iml
 public/uploads/*
+config/env_vars.rb
+config/database.yml
+
+/commit-msg/*
