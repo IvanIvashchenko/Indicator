@@ -13,3 +13,6 @@ To send mails with sidekiq, install redis and start sidekiq
 ```
 bundle exec sidekiq --environment development -C config/sidekiq.yml
 ```
+
+Some test text
+Blablabla
